@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { Login } from './component/Auth/Login';
 import { Signup } from './component/Auth/Signup';
-
+import Home from './pages/home';
+import MyBooks from './pages/mybook';
 
 
 
@@ -22,6 +23,9 @@ export const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+
+        <Route path="/" element={<Home />} />
+        <Route path="/mybooks" element={<MyBooks />} />
 
           {/* <Route
             path="/dashboard"
@@ -51,7 +55,7 @@ export const App = () => {
           <Route path="/request" element={<DashboardLayout />} />
           <Route path="/contact" element={<DashboardLayout />} /> */}
 
-          <Route path="*" element={<Navigate to="/login" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
  
     </Router>
