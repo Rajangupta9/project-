@@ -22,8 +22,8 @@ export const Login = () => {
         }
         try {
             const response = await login({
-                Email: Email,
-                Password: Password
+                email: Email,
+                password: Password
             })
 
             localStorage.setItem("token", response.accessToken)

@@ -9,8 +9,8 @@ import { signup } from '../../Controller/auth';
 export const Signup = () => {
     const [formdata, setformdata] = useState({
         Username: '',
-        Email: "",
-        Password: '',
+        email: "",
+        password: '',
         confirmPassword: '',
         checkbox: false
 
@@ -27,11 +27,11 @@ export const Signup = () => {
             alert("You must agree to terms")
             return
         }
-        if (formdata.Password !== formdata.confirmPassword) {
+        if (formdata.password !== formdata.confirmPassword) {
             alert("Password is not matched with confirm Password")
             return
         }
-        if (isValidEmail(formdata.Email) === false) {
+        if (isValidEmail(formdata.email) === false) {
             alert("Enter your valid Email")
             return
         }
@@ -55,9 +55,9 @@ export const Signup = () => {
     };
 
 
-    function isValidEmail(Email) {
+    function isValidEmail(email) {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return emailRegex.test(Email);
+        return emailRegex.test(email);
     }
 
     return (
@@ -153,10 +153,10 @@ export const Signup = () => {
                             label="Email"
                             required
                             variant="outlined"
-                            value={formdata.Email}
+                            value={formdata.email}
                             size="small"
                             onChange={(e) =>
-                                setformdata({ ...formdata, Email: e.target.value })
+                                setformdata({ ...formdata, email: e.target.value })
                             }
 
                         />
@@ -166,10 +166,10 @@ export const Signup = () => {
                             type="Password"
                             required
                             variant="outlined"
-                            value={formdata.Password}
+                            value={formdata.password}
                             size="small"
                             onChange={(e) => setformdata({
-                                ...formdata, Password: e.target.value
+                                ...formdata, password: e.target.value
                             })}
                         />
                         <TextField

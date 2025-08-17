@@ -2,8 +2,9 @@ import api  from "../Services/api";
 
 export const signup = async (userData) => {
     try {
-        const response = await api.post("/register", userData);
+        const response = await api.post("/api/auth/register", userData);
         return response.data;
+
     } catch (error) {
         throw new Error(error.response?.data?.error || "Signup Failed");
     }
@@ -11,8 +12,10 @@ export const signup = async (userData) => {
 
 export const login = async (userData) => {
     try {
-        const response = await api.post("/login", userData);
+        const response = await api.post("/api/auth/login", userData);
+        console.log(response.)
         return response.data;
+        
     } catch (error) {
         throw new Error(error.response?.data?.error || "Login Failed");
     }
